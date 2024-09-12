@@ -1,0 +1,17 @@
+<div class="parent">
+    <div class="heading">
+        <h2>Product Form</h2>
+    </div>
+    <form (ngSubmit)="onLogin()">
+        <div class="input">
+            <input type="email" [(ngModel)]="login.EmailId" name="EmailId" required>
+        <label>Username</label>
+        </div>
+        <div class="input">
+        <input type="password" [(ngModel)]="login.Password" name="Password" required="">
+        <label>Password</label>
+        </div>
+            <input type="submit" value="Login" class="btn">
+            <input  value="Register"  [routerLink]="['/register']" class="btn">
+    </form>
+</div>

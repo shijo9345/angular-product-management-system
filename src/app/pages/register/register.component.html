@@ -1,0 +1,47 @@
+<div class="parent">
+    <div class="heading">
+        <h2>Register Form</h2>
+    </div>
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+        <div class="input">
+
+            <input name="firstName" [(ngModel)]="user.firstName" required>
+            <label >First Name:</label>
+          </div>
+      
+          <div class="input">
+            
+            <input id="middleName" name="middleName" [(ngModel)]="user.middleName" required>
+            <label for="middleName">Middle Name:</label>
+          </div>
+      
+          <div class="input">
+           
+            <input id="lastName" name="lastName" [(ngModel)]="user.lastName" required>
+            <label for="lastName">Last Name:</label>
+          </div>
+      
+  
+      <div class="input">
+       
+        <input id="mobileNo" name="mobileNo" [(ngModel)]="user.mobileNo" required>
+        <label for="mobileNo">Mobile Number:</label>
+      </div>
+  
+      <div class="input">
+        
+        <input id="emailId" name="emailId" [(ngModel)]="user.emailId" type="email" required>
+        <label for="emailId">Email:</label>
+      </div>
+  
+      <div class="input">
+     
+        <input id="password" name="password" [(ngModel)]="user.password" type="password" required>
+        <label for="password">Password:</label>
+      </div>
+  
+      <button type="submit" class="btn" [disabled]="!registerForm.valid"  [routerLink]="['/register']" >Register</button>
+      <input  value="Login"  [routerLink]="['/login']" class="btn">
+    </form>
+  </div>
+  

@@ -1,0 +1,48 @@
+<div class="container">
+    <h2 class="mb-4 text-center">𝙿𝚛𝚘𝚍𝚞𝚌𝚝 𝚏𝚘𝚛𝚖</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Product Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="name" required class="form-control"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" [(ngModel)]="color" required class="form-control"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="capacity">Capacity:</label>
+        <input type="text" id="capacity" name="capacity" [(ngModel)]="capacity" required class="form-control"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="price">Price (optional):</label>
+        <input type="number" id="price" name="price" [(ngModel)]="price" class="form-control"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="screenSize">Screen Size (optional):</label>
+        <input type="number" id="screenSize" name="screenSize" [(ngModel)]="screenSize" class="form-control" />
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  
+    <div *ngIf="products.length > 0">
+      <h2>Products:</h2>
+      <ul>
+        <li *ngFor="let product of products">
+          <strong>{{ product.name }}</strong> - Color: {{ product.data.color }},
+          Capacity: {{ product.data.capacity }},
+          Price: {{ product.data.price || 'N/A' }},
+          Screen Size: {{ product.data.screenSize || 'N/A' }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
